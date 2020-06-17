@@ -1,0 +1,29 @@
+nginx 
+nginx -s stop
+nginx -s quit
+nginx -s reload
+nginx -s quit:此方式停止步骤是待nginx进程处理任务完毕进行停止。
+nginx -s stop:此方式相当于先查出nginx进程id再使用kill命令强制杀掉进程。
+
+
+
+
+一、开启命令
+supervisor的服务器端部分启动命令：
+sudo unlink /var/run/supervisor.sock
+supervisord -c /etc/supervisord.conf
+此时默认开启了所有服务
+supervisor的客户端部分命令：
+supervisorctl status 查看进程运行状态
+supervisorctl start 进程名 启动进程
+supervisorctl stop 进程名 关闭进程
+supervisorctl restart 进程名 重启进程
+supervisorctl update 重新载入配置文件
+supervisorctl shutdown 关闭supervisord
+supervisorctl clear 进程名 清空进程日志
+supervisorctl 进入到交互模式下。使用help查看所有命令。
+start stop restart + all 表示启动，关闭，重启所有进程。
+二、关闭命令
+supervisorctl stop all先关闭supervisor服务
+之后再关闭supervisord服务
+kill -9 pid
