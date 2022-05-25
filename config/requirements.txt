@@ -40,7 +40,7 @@ packaging==20.4
 Pillow==7.1.2
 pycparser==2.20
 Pygments==2.6.1
-PyJWT==1.7.1
+PyJWT==2.4.0
 PyMySQL==0.9.3
 pyparsing==2.4.7
 pytz==2019.3
